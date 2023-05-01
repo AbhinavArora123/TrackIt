@@ -1,3 +1,7 @@
+*{
+  padding: 0;
+  margin: 0;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +9,42 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --white:white;
+  --grey:#b6b6b6;
+  --twitter-primary:#50b7f5;
+  --twitter-primary-2:#83c6f0;
+  --twitter-secondary:#e6ecf0;
+  --grey-2:#838282;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.btn_primary,
+.btn_secondary{
+  border-radius: 20px;
+  /* padding: 5px; */
+  /* width: 50%; */
+  /* margin: 4px; */
+  padding: 0.6rem 0;
+  border: 1.5px solid var(--grey);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn_primary{
+  background-color: var(--white);
+}
+
+.btn_primary:hover{
+  background-color: var(--twitter-secondary);
+}
+.btn_secondary{
+  background-color: var(--twitter-primary);
+}
+.btn_secondary:hover{
+  background-color: var(--twitter-primary-2);
 }
