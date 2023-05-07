@@ -1,0 +1,6 @@
+.gallary{
+    height: 500px;
+    width: auto;
+    object-fit: cover;
+    filter: brightness(0.6);
+}

@@ -29,13 +29,14 @@ function App() {
     <Router>
       <div className='App'>
       <Routes>
-        <Route path='home' element={[<Navbar />,<Galary/>,<Busroutes/>,<Feestatus/>,<Inquiry/>,<Footer/>]} /> 
+        <Route path='/' element={[<Navbar />,<Galary/>,<Busroutes/>,<Feestatus/>,<Inquiry/>,<Footer/>]} /> 
         <Route path='busroutes' element={[<Navbar/>,<Busroutes />,<Footer/>]} /> 
         <Route path='feestatus' element={[<Navbar/>,<Feestatus />,<Footer/>]} /> 
         <Route path='galary' element={[<Navbar/>,<Galary />,<Footer/>]} /> 
         <Route path='inquiry' element={[<Navbar/>,<Inquiry />,<Footer/>]} /> 
         <Route path='login' element={<Login />} /> 
         <Route path='signup' element={<Signup />} /> 
+        <Route path='nav' element={<Navbar />} /> 
       </Routes>
       </div>
     </Router>

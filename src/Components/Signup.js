@@ -118,6 +118,10 @@ function Signup() {
               </div>
 
               <MDBBtn className='mb-4' type='submit' onClick={PostData} size='lg'>Register</MDBBtn>
+              <h5>Already have an Account?</h5>
+              <Link to='/login'>
+              <MDBBtn id='glow-on-hover' className='mb-4' size='lg'>Login</MDBBtn>
+              </Link>
 
             </MDBCol>
 

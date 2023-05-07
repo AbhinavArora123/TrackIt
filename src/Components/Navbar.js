@@ -1,30 +1,67 @@
 import React from 'react'
+// import {IoIosAdd} from 'react-icons/io';
+import SearchIcon from '@mui/icons-material/Search';
+import CloseIcon from '@mui/icons-material/Close';
+import MenuIcon from '@mui/icons-material/Menu';
+import './Navbar.css';
+// import logo from '../Images/logo.png';
+import { Button } from './Button';
+import {Link} from 'react-router-dom';
 
 function Navbar() {
+  let searchBtn=document.querySelector('.searchBtn');
+  let closeBtn=document.querySelector('.closeBtn');
+  let searchBox=document.querySelector('.searchBox');
+  let menuToggle=document.querySelector('menuToggle');
+  let navigation=document.querySelector('.navigation');
+  let header=document.querySelector('header');
+
+  const a=()=>{
+    searchBox.classList.add('active');
+    closeBtn.classList.add('active');
+    searchBtn.classList.add('active');
+    menuToggle.classList.add('hide');
+    header.classList.remove('open');
+  }
+
+  const b=()=>{
+    searchBox.classList.remove('active');
+    closeBtn.classList.remove('active');
+    searchBtn.classList.remove('active');
+    menuToggle.classList.remove('hide');
+  }
+  const c=()=>{
+    header.classList.toggle('open');
+    searchBox.classList.remove('active');
+    closeBtn.classList.remove('active');
+    searchBtn.classList.remove('active');
+  }
   return (
-    <div>
-        <header class="text-gray-400 bg-gray-900 body-font">
-  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-    <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
-        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-      </svg>
-      <span class="ml-3 text-xl">Tailblocks</span>
-    </a>
-    <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
-      <a class="mr-5 hover:text-white">First Link</a>
-      <a class="mr-5 hover:text-white">Second Link</a>
-      <a class="mr-5 hover:text-white">Third Link</a>
-      <a class="mr-5 hover:text-white">Fourth Link</a>
-    </nav>
-    <button class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0">Button
-      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
-        <path d="M5 12h14M12 5l7 7-7 7"></path>
-      </svg>
-    </button>
-  </div>
-</header>
-    </div>
+    <header className='head'>
+      <a href='#' className='logo'>TRACK IT</a>
+      <div className='group'>
+        <ul className='navigation'>
+          <li><a href='#' >Home</a></li>
+          <li><a href='#'>About us</a></li>
+          <li><a href='#'>Services</a></li>
+          <li><a href='#'>Blog</a></li>
+        </ul>
+        <Link to='/signup'>
+          <a href='#'><Button/></a>
+        </Link>
+          {/* <Button className='bt'/> */}
+        <div className='search'>
+          <span className='icon'>
+            <SearchIcon  className='searchBtn' onClick={a} name='search-outline'  />
+            <CloseIcon className='closeBtn' onClick={b} name='close-outline'  />
+            <MenuIcon className='menuToggle' onClick={c} />
+          </span>
+        </div>  
+        <div className='searchBox'>
+          <input type='text' placeholder='Search here...'></input>
+        </div>
+      </div>
+    </header>
   )
 }
 
